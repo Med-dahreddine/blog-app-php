@@ -1,0 +1,54 @@
+.hr_height{
+    height: 1px;
+    color: black;
+    background-color: black;
+}
+html,
+body,
+#intro{
+    height: 100%;
+}
+
+#intro{
+    background: url(img/1-5.jpg)no-repeat center fixed;
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    
+    width: 100%;
+    width: 100%;
+  }
+  
+  .container img {
+    width: 100%;
+    height: auto;
+    margin-top: 6%;
+  }
+  
+  .container .button {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    /* background-color: #555; */
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  /* a{
+      text-decoration: none;
+      color: white;
+  } */
+  
+  .container .button:hover {
+    background-color: black;
+    color: white;
+  }
