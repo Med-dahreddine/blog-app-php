@@ -11,37 +11,36 @@
     <title>Articles</title>
   </head>
   <body>
-    
+    <h1 class="text-center"> Articles</h1>
+
   <div class="container">
-        <div class="row">
-            <div class="col-md-12 mt-3 d-flex justify-content-center">
-                <img src="img/picture2_blog.jpg" class="">
+        <div class="row ">
+            <div class="col-12 col-md-6 ml-10">
+                <img src="img/picture2_blog.jpg" class="img-responsive w-100">
             </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-             <?php 
-                include 'init.php';
-                $model = new Model();
-                // $id = $_REQUEST['id'];
-                $row = $model->fetch_single($id);
-                if(!empty($row)){
-            ?> 
-                <div class="card">
-                    <div class="card-header text-center">
-                    Article
+            
+            <div class="col-12 col-md-6 mx-auto ">
+                <?php
+                        include "init.php";
+                        $model = new Model();
+                        $rows = $model->fetch();
+                        // if(!empty($rows)){
+                            foreach($rows as $row){
+                        
+                ?>
+                <div class="card mt-5 mb-4" >
+                    <div class="card-header text-center" >
+                        <h4 class="text-center" ><?php echo $row['titre']; ?></h4>
                     </div>
                     <div class="card-body">
-                     <h4 class="text-center"><?php echo $row['titre']; ?></h4>
-                    <p><?php echo $row['paragraphe']; ?></p>
+                        <p><?php echo $row['paragraphe']; ?></p>
                     </div>
-                    <?php 
-                    }else{
-                        echo "no data";
-                    }
-                    ?> 
                 </div>
+                <?php
+                    }
+                    // }
+                ?> 
+                
             </div>
         </div>
 

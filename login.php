@@ -22,7 +22,7 @@ class User{
         }
 
     public function login($email,$password){
-        $sql = "SELECT * FROM user WHERE email= '$email' and password= '$password'";
+        $sql = "SELECT * FROM user WHERE email= '$email' and password='$password'";
         // die($sql);
             if($result = $this->con->query($sql)){
                 return($result->fetch_assoc());
@@ -53,7 +53,7 @@ if(isset($_POST['login'])){
             header('location: index.php');
             echo "connected successfully";
         }else{
-            echo 'Emal or Password are wrong!';
+            echo 'Email or Password are wrong!';
         }
     }
 }
@@ -84,18 +84,6 @@ if(isset($_POST['login'])){
 ?>
 
 
-    <script type="text/javascript" language="javascript">
-    function submitlogin() {
-        var form = document.login;
-        if (form.email.value == "") {
-            alert("Enter email or username.");
-            return false;
-        } else if (form.password.value == "") {
-            alert("Enter password.");
-            return false;
-        }
-    }
-    </script>
     <div class="login-form">
         <form action="" method="POST">
             <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>

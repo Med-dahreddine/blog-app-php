@@ -24,6 +24,11 @@
     <!-- Modal -->
     <?php
             include "init.php";
+            session_start();
+            if(!$_SESSION['login']){
+              header("location:login.php");
+            }
+            
             $model  = new Model();
             $insert = $model->insert();
             

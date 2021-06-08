@@ -91,7 +91,7 @@
 
         public function update($data){
 
-            $query = " UPDATE article SET titre='$data[titre]' , paragraphe='$data[paragraphe]'";
+            $query = " UPDATE article SET titre='$data[titre]' , paragraphe='$data[paragraphe]' WHERE id = '$data[id]' ";
         
             if($sql = $this->con->query($query)){
                 return true;
